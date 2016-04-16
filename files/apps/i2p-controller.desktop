@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=I2P Anonymity network controller, anonymous internet.
+Exec=/usr/local/sbin/i2p-controller.sh
+Name=I2P Controller
+GenericName[en_US]=I2P Anonymity network controller.
+Categories=Network;Internet;Networking;Privacy;i2p;VPN;
+Icon=/usr/share/pixmaps/i2p.png
+NoDisplay=false
+StartupNotify=false
+Terminal=0
+TerminalOptions=
+Type=Application
+GenericName[en_US.UTF-8]=Privacy, Cryptography, Anonymity Tools, I2P

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=CJDNS / Hyperboria Controller for mesh networking privacy and uncensored internet access
+Exec=sudo /usr/local/sbin/cjdns-controller.sh
+Name=CJDNS / Hyperboria Controller
+GenericName[en_US]=CJDNS / Hyperboria Controller
+Categories=Network;Internet;Networking;Privacy;Mesh;
+Icon=Cjdns_logo.png
+NoDisplay=false
+StartupNotify=false
+Terminal=0
+TerminalOptions=
+Type=Application
+GenericName[en_US.UTF-8]=CJDNS / Hyperboria Controller

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# overwrite Network Manager's auto-generated resolv.conf file
+echo "nameserver 127.0.2.1
+nameserver 127.0.2.2" > /run/resolvconf/resolv.conf
+

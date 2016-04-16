@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Popcorn Time
+GenericName=Torrent Movie Player
+Comment=Watch Movies via Bit Torrent
+Exec=/opt/popcorn-time/Popcorn-Time
+Icon=/usr/share/icons/popcorn.png
+Terminal=false
+Type=Application
+Categories=AudioVideo;Player;
+Keywords=Player;Video;Torrent;

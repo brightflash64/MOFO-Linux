@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=Tor Anonymity network controller, anonymous internet.
+Exec=/usr/local/sbin/tor-controller.sh
+Name=Tor Controller
+GenericName[en_US]=Tor Anonymity network controller.
+Categories=Network;Internet;Networking;Privacy;Tor;VPN;
+Icon=/usr/share/pixmaps/tor.png
+NoDisplay=false
+StartupNotify=false
+Terminal=0
+TerminalOptions=
+Type=Application
+GenericName[en_US.UTF-8]=Privacy, Cryptography, Anonymity Tools, Tor, Onion Router

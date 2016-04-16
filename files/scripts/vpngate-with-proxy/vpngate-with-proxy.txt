@@ -1,0 +1,5 @@
+apt-get install python-urwid python-pip
+git clone https://github.com/Dragon2fly/vpngate-with-proxy.git
+cd vpngate-with-proxy
+./vpnproxy_tui.py
+

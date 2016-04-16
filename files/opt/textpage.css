@@ -1,0 +1,43 @@
+/* ---------- Text Page container ---------- */
+body {
+   color: #DDDDDD;
+   background-color: #000000;
+   font-size:14px;
+   font-family: Arial, Helvetica, Courier, Verdana, "Times New Roman";
+   text-justify: auto;
+   padding:0px;
+   overflow: auto;
+}
+    a:link {text-decoration: none; color: #3D81EE;}
+    a:visited {color: #3D81EE;}
+    a:hover {color: #FFFFFF;}
+    b.red {color: #FF0000;}
+    p {margin-top: 10px; text-align: left;}
+    p.articles {margin-top: 20px;}
+    p.caution {text-align: left; color: #FF0000; font-weight: bold;}
+    p.highlight {text-align: left; color: #DDDDDD; font-weight: bold;}
+    h1 {text-align: left; font-size:25px;}
+    h2 {text-align: left;}
+    h3 {text-align: left;margin-top 10px;}
+    ul,ol {margin-left:15px;padding-left:5px;margin-bottom:10px;}
+    li {margin-bottom:5px;padding-left 15px;padding-right 10px;}
+    div.c10 {font-size: 50%; text-align: left;}
+    div.c1 {float: left;}
+    div.c2 {float: left;}
+    div.c3 {text-align: center; background:#303030; opacity:0.95; filter:alpha(opacity=95);}
+    div.center {margin-left: auto; margin-right: auto;}
+    div.content {width:800px; background-color: #000008; margin-left: auto; margin-right: auto;}
+    div.header {width:800px; float: left;}
+    div.hugefont {font-weight:bold; font-size: 50px;}
+    div.inner {width:800px;}
+    div.intro {width:800px;}
+    div.player {width:165px; margin-left: auto; margin-right: auto;}
+
+/* ---------- clear floats ---------- */
+.clear {
+height:0;
+line-height:0px;
+font-size:0;
+clear:both;
+}
+

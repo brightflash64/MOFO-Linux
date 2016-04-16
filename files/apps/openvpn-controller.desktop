@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=OpenVPN VPN, private internet controller.
+Exec=sudo /usr/local/sbin/openvpn-controller.sh
+Name=OpenVPN Controller
+GenericName[en_US]=OpenVPN controller.
+Categories=Network;Internet;Networking;Privacy;
+Icon=preferences-system-network
+NoDisplay=false
+StartupNotify=false
+Terminal=0
+TerminalOptions=
+Type=Application
+GenericName[en_US.UTF-8]=Privacy, OpenVPN, Cryptography, Anonymity Tools, VPN

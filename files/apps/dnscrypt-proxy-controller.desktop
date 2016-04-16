@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=DNSCrypt-Proxy Controller for networking privacy and uncensored internet access
+Exec=sudo /usr/local/sbin/dnscrypt-proxy-controller.sh
+Name=DNSCrypt-Proxy Controller
+GenericName[en_US]=DNSCrypt-Proxy Controller.
+Categories=Network;Internet;Networking;Privacy;
+Icon=preferences-system-network
+NoDisplay=false
+StartupNotify=false
+Terminal=0
+TerminalOptions=
+Type=Application
+GenericName[en_US.UTF-8]=Privacy, DNS, Cryptography, Anonymity Tools, Encryption

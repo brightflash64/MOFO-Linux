@@ -1,0 +1,7 @@
+----------------------------------------
+Mon Apr  4 11:06:00 2016: Vpngate with proxy is started
+ using gate: http://www.vpngate.net
+('Connection aborted.', error(104, 'Connection reset by peer'))
+ Connection to gate http://www.vpngate.net failed
+ Failed to get VPN servers data
+ Check your network setting and proxy

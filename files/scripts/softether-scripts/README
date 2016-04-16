@@ -1,0 +1,44 @@
+One line command to connect a vpngate server with either vpnclient or openvpn, for ubuntu12.04
+    
+    github: https://github.com/fromMars/vgauto/
+    
+    
+    Vpngate has been popular since 2013, but it does not have a user friendly interface on Linux, so I make this script for my convience. Of course, if you find it useful, you may also use it.
+    
+    This script is used on Ubuntu 12.04 LTS, I'm not sure if it works on other linux dists. May be I will try some testings in my free time. If you have interest, you may test it by your own. It will only modify you vpncmd account settings(add an account setting), as well as you route table settings, no further modifications.
+    
+
+
+
+VPNGATE:
+usage:  [sudo ]python ./start_vpn.py        
+
+info:   
+        0. Install vpngate client;
+        1. Start your vpnclient service, usually run "vpnclient start" command in terminal;
+        2. You must have access to route table;
+        3. If you haven't access to 'http://vpngate.net/en/', you can use a http proxy '127.0.0.1:8087';
+        4. Default gateway is 192.168.0.1;
+        5. Default virtual adapter is "vpn_vg";
+        6. Default physical adapter is "eth0";
+        
+to do:
+        1. ip route (Seems no need to do this, because when virtual adapter get ip from server with dhcp, it will automatically modify the route table. Not confirmed though.):
+            10.211.0.0/16 dev vpn_vg  proto kernel  scope link  src 10.211.1.54
+            (currently is static in the script, make it dynamic with dhcp)
+        2. auto detect whether vpncmd command "accountconnect ip" executes successfully or not, if not exit or retry.
+
+
+
+OPENVPN:
+usage:  [sudo ]python ./start_openvpn.py
+
+info:
+        0. This method do not need to edit any settings of configs.py file except the proxy settings;
+        1. When you see "Initialization Sequence Completed", it means connected successfully;
+        2. You could also use "openvpn tmp_openvpn_config.ovpn" to connect manually;
+        3. Main menu option "2. close vpn" is not usable here, when you want to close the vpn connection, just hit "Ctrl+C" to break it in terminal;
+        4. The first time running will create a "tmp_csv.csv" file include all servers fetched, next running will use server from this file instead of re-fetching from "vpngate.net". If you want to use a pretty new server list, just delete this file.
+
+
+NOTE: If "sudo command" does not work, try "su - root" switch to root user and execute the command. 
