@@ -152,8 +152,8 @@ cp /files/apps/dnscrypt-proxy-controller.desktop /usr/share/applications/dnscryp
 cp /files/apps/i2p-controller.desktop /usr/share/applications/i2p-controller.desktop
 cp /files/apps/nautilus-root.desktop /usr/share/applications/nautilus-root.desktop
 cp /files/apps/openvpn-controller.desktop /usr/share/applications/openvpn-controller.desktop
-cp /files/apps/TorBrowser /etc/skel/.local/share/applications/TorBrowser
-cp /files/apps/TorMessenger /etc/skel/.local/share/applications/TorMessenger
+cp /files/apps/start-tor-browser.desktop /etc/skel/.local/share/applications/start-tor-browser.desktop
+cp /files/apps/start-tor-messenger.desktop /etc/skel/.local/share/applications/start-tor-messenger.desktop
 cp /files/apps/popcorn-time.desktop /usr/share/applications/popcorn-time.desktop
 cp /files/apps/tor-controller.desktop /usr/share/applications/tor-controller.desktop
 cp /files/icons/Cjdns_logo.png /usr/share/pixmaps/Cjdns_logo.png
