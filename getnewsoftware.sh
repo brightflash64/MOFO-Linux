@@ -42,15 +42,17 @@ apt-get upgrade
 apt-get -y install $(grep -vE "^\s*#" newsoftware  | tr "\n" " ")
 
 #voip software - ring
+echo "\ngetting Ring"
 sh -c "echo 'deb http://nightly.apt.ring.cx/ubuntu_15.04/ ring main' >> /etc/apt/sources.list.d/ring-nightly-man.list"
 wget -O - "http://gpl.savoirfairelinux.net/ring-download/ring.pub.key" | sudo apt-key add -
 
 #voip software - jitsi
+echo "\nnext, Jitsi"
 wget -O - "https://download.jitsi.org/jitsi/debian/jitsi_2.8.5426-1_amd64.deb"
 dpkg -i jitsi_2.8.5426-1_amd64.deb
 
 #get the latest bleachbit deb and put in the same directory as this script.
-echo "\nstarting with Bleachbit"
+echo "\ngetting Bleachbit"
 wget -O - "http://bleachbit.sourceforge.net/download/file?file=bleachbit_1.8_all_ubuntu1504.deb"
 dpkg -i bleachbit_1.8_all_ubuntu1504.deb
 
@@ -69,7 +71,7 @@ rm -f tor-browser-linux64-5.5.4_en-US.tar.xz
 cd ~
 
 #get the latest Tor Messenger and put in the opt directory.
-echo "\nnext, Tor Browser"
+echo "\nnext, Tor Messenger"
 cd /opt
 wget -O - "https://dist.torproject.org/tormessenger/0.1.0b4/tor-messenger-linux64-0.1.0b4_en-US.tar.xz"
 tar -xjvf "tor-messenger-linux64-0.1.0b4_en-US.tar.xz"
@@ -78,6 +80,7 @@ rm -f tor-browser-linux64-5.5.4_en-US.tar.xz
 cd ~
 
 #install cjdns and configure for the Hyperboria network
+echo "\nnext, Cjdns"
 wget -c https://gist.githubusercontent.com/satindergrewal/1b8310e9a4a68183385c/raw/369ec444ab26b31552c4e5d10d2906c4214232fd/hyperboria.sh -O /etc/init.d/hyperboria
 chmod +x /etc/init.d/hyperboria
 /etc/init.d/hyperboria install
@@ -95,8 +98,8 @@ echo "\nCleaning up apt..."
 apt-get -y autoremove
 apt-get clean
 
-echo "\nCopying files and scripts..."
 #create directories
+echo "\nMaking new directories..."
 mkdir /etc/skel/cjdns
 mkdir /etc/skel/openvpn
 mkdir /etc/skel/softether
@@ -110,6 +113,7 @@ mkdir /etc/skel/.local/share
 mkdir /etc/skel/.local/share/applications
 
 #move certain files into the new system
+echo "\nCopying files..."
 cp /files/apt/10periodic /etc/apt/apt.conf.d/10periodic
 cp /files/iradio-initial.xspf /usr/share/rhythmbox/plugins/iradio/iradio-initial.xspf
 cp /files/alsa/asound.state /var/lib/alsa/asound.state
@@ -117,6 +121,7 @@ cp /files/pulse/daemon.conf /etc/pulse/daemon.conf
 cp /files/pulse/default.pa /etc/pulse/default.pa
 cp /files/networking/resolv.conf /run/resolvconf/resolv.conf
 cp /files/networking/resolvconf /etc/network/if-up.d/resolvconf
+cp /files/etc/asound.conf /etc/asound.conf
 cp /files/etc/issue /etc/issue
 cp /files/etc/issue.net /etc/issue.net
 cp /files/etc/legal /etc/legal
@@ -155,12 +160,13 @@ cp /files/icons/Cjdns_logo.png /usr/share/pixmaps/Cjdns_logo.png
 cp /files/icons/i2p.png /usr/share/pixmaps/i2p.png
 cp /files/icons/tor.png /usr/share/pixmaps/tor.png
 cp /files/opt/iccpr.html /opt/iccpr.html
-cp /files/opt/MOFO-LINUX-README.html_link /opt/MOFO-LINUX-README.html
+cp /files/opt/MOFO-LINUX-README.html_link /etc/skel/MOFO-LINUX-README.html
 cp /files/opt/MOFO-LINUX-README.html /opt/MOFO-LINUX-README.html
 cp /files/opt/textpage.css /opt/textpage.css
 cp /files/opt/udhr.html /opt/udhr.html
 
 #make or edit some files
+echo "\nediting condigurations..."
 echo "Keep your OpenVPN configs, keys, and certificates in this folder." > /etc/skel/openvpn/README.txt
 
 #set performance configuration in sysctl.conf
@@ -180,3 +186,5 @@ net.ipv4.ip_local_port_range = 10240 65535
 vm.swappiness=10
 # Improve cache management
 vm.vfs_cache_pressure=50" >> /etc/sysctl.conf
+
+echo "\nAll Tasks completed!"
