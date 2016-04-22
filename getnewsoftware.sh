@@ -127,6 +127,7 @@ cp /files/etc/issue.net /etc/issue.net
 cp /files/etc/legal /etc/legal
 cp /files/etc/lsb-release /etc/lsb-release
 cp /files/etc/os-release /etc/os-release
+cp /files/firefox/privoxy.js /usr/lib/firefox/defaults/pref/privoxy.js
 cp /files/scripts/cjdns-controller.sh /usr/local/sbin/cjdns-controller.sh
 cp /files/scripts/dnscrypy-proxy-controller.sh /usr/local/sbin/dnscrypt-proxy-controller.sh
 cp /files/scripts/i2p-controller.sh /usr/local/sbin/i2p-controller.sh
