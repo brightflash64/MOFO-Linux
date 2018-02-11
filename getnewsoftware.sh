@@ -1,6 +1,6 @@
 #! /bin/sh
-#
-#System setup script for MOFO Linux v5.0
+
+#System setup script for MOFO Linux v6.0
 #Use on Ubuntu / Mint / Debian
 #Run this script as root within the chroot!
 
