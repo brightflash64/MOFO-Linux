@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Welcome to MOFO Linux v4.5!</title>
-    <meta name="Author" content="Captain Thermobaric">
+    <title>Welcome to MOFO Linux 6.0!</title>
+    <meta name="Author" content="Philip Collier">
     <meta name="Description" content="MOFO Linux Introduction">
     <meta name="GENERATOR" content="Kwrite">
     <meta name="Language" content="English">  
@@ -12,76 +12,62 @@
     <link rel="stylesheet" type="text/css" href="textpage.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   </head>
-
 <body>
 <div class="content">
-<div class="header">
-<div class="c2">
-<div class="hugefont"><a href="http://mofolinux.com" style="color: #DDDDDD">Welcome to MOFO Linux v4.5!</a></div>
-</div>
-</div>
-
 <div class="inner">
-<br>
-<p>Release Date:  04/10/2016.</p>
+<div class="hugefont"><a href="https://mofolinux.com" style="color: #DDDDDD">Welcome to MOFO Linux 6.0!</a>
+<h2>Release Date:  02/08/2018.</h2></div>
 
 <h3>INTRODUCTION</h3>
-
 <p>MOFO Linux is an operating system optimized for defeating all major
 methods of internet censorship and surveillance used by governments, 
 corporations, schools, and internet service providers. It is a tool
-created to empower people for exercising their inalienable <b>
+created to empower people for exercising their unalienable <b>
 rights to privacy, freedom of expression, association, and peaceful assembly</b>, in accordance with
-the <a href="file:///opt/html/iccpr.html">International Covenant on Civil and Political Rights</a>
-and the <a href="file:///opt/html/udhr.html">Universal Declaration of Human Rights</a>.
+the <a href="file:///usr/local/share/html/iccpr.html">International Covenant on Civil and Political Rights</a>
+and the <a href="file:///usr/local/share/html/udhr.html">Universal Declaration of Human Rights</a>.
 The system contains office, multimedia, and internet applications enabling you to read, write, watch,
-or listen to any media from anywhere with an internet connection.
+or listen to any media from anywhere with an internet connection. MOFO Linux is designed to unblock
+everything.
 </p>
 
-<p>MOFO Linux is designed for easy usage on home PCs, laptops, and any 
-computers installed in internet cafes around the world.  Use MOFO Linux
-to break free of authoritarian powers intending to control the flow
-of information or "own the truth."  As of version 4.0, MOFO Linux is
-built upon an Ubuntu base, with all of the latest software for productivity
-and entertainment.
+<p>MOFO Linux is designed for easy usage on home PCs, laptops, and any computers installed in internet
+cafes around the world.  Use MOFO Linux to break free of authoritarian powers intending to control the
+flow of information or "own the truth."  MOFO Linux is built upon an Ubuntu base,
+with plenty of the latest software for <a href="file:///usr/local/share/html/browsing.html"> web browsing</a>,
+productivity and entertainment.
 </p>
 
-<p>MOFO Linux has Encrypted DNS, OpenVPN, Softether, Tor, and I2P installed
-to provide anonymous and secure access to the internet.  The system is designed
-for running from a bootable USB stick or "frugal install" on a hard drive / SSD.
-Browsing history and usage tracks are destroyed on shutdown.
+<p>MOFO Linux contains Encrypted DNS, OpenVPN, Softether, Tor, Freenet, and I2P, and other
+software tools provide anonymous and secure access to the internet and circumvention of state
+censorship restrictions.  The system is designed for running from a bootable USB stick or "frugal
+install" on a hard drive / SSD. Browsing history and usage tracks are destroyed on shutdown.
 </p>
 
 <p>MOFO Linux can be installed to a hard drive, flash memory device, or SSD in the manner
-of any other Ubuntu distribution.  Use the included installation utility to install to a
-storage device with at least 8 GB of space.  Changes are persistent in a fully installed
-system, so be sure to make liberal use of file encryption and clean-up applications installed
-in MOFO Linux.
+of any other Linux distribution.  Use the Startup Disk Creator to make a bootable live USB system.
+When running as a live USB or live DVD, changes and usage tracks are lost on shutdown.
+Otherwise, use Ubiquity to install MOFO Linux to a hard drive or flash memory device with at least
+8 GB of space.  Changes are persistent in a fully installed system, so be sure to make liberal use
+of file encryption and disk wiping applications installed in MOFO Linux.
 </p>
 
 <h3>SYSTEM PASSWORDS</h3>
-<p>As of version 4.0, MOFO Linux is configured with one default user account (mofo), with the
+<p>MOFO Linux is configured with one default user account (mofo), with the
 ability to switch to root.  There are no passwords in the default MOFO Linux distro.  You may create
 your own password, if desired, but it is not necessary for typical usage.
 </p>
 
-<h3>L2TP/IPsec VPN IN MOFO LINUX</h3>
-<p>Due to the removal of Openswan and dependencies from the Ubuntu repositories,
-L2TP/IPSec is not an available VPN.  Strongswan is installed, providing IPSEC VPN
-connectivity.
-</p>
-
-<h3>SOFTETHER VPN</h3>
-<p>Softether is capable of fast broadband data transfers, uses strong encryption, but is highly
-targeted by censorship authorities.  Client software for Linux is still sparse, but MOFO Linux
-includes the official client with connectivity through manually entered shell commands.
-</p>
-
-<h3>LANTERN (Domain Fronting Proxy)</h3>
+<h3>LANTERN and PSIPHON (Domain Fronting Proxies)</h3>
 <p><a href="https://getlantern.org" target="_blank">Lantern</a> works well in restricted internet
 environments. Simply find "Lantern" in the Dash application search (the top icon on the desktop launcher).
 Start Lantern and it will automatically connect to remote servers and provide fast, unrestricted internet
 access through Firefox.
+</p>
+<p><a href="https://psiphon.ca" target="_blank">Psiphon</a> is a circumvention system effective against
+sophisticated state censorship stystems.  Access psiphon in the Dash application search, and click to bring
+up the controller.  Select "start" or "stop" as necessary, and the controller will handle the configuration
+process.
 </p>
 
 <h3>OPENVPN IS WELL SUPPORTED IN MOFO LINUX</h3>
@@ -91,6 +77,7 @@ access through Firefox.
 <li>If you don't have a subscription to a VPN service, simply use the free servers at 
 <a href="http://vpngate.net" target="_blank">http://vpngate.net</a>.  If VPN Gate is 
 blocked in your country, try the mirrors listed below to obtain fresh OpenVPN config files.
+If OpenVPN is blocked, use Bitmask, Lantern, Psiphon, or Tor Browser to unblock your internet.
 </li>
 
 <li>Keep a copy of your ovpn, key, ca, and crt files on a USB flashdrive
@@ -107,35 +94,54 @@ and key data.  Again, use the OpenVPN Controller application for servers operate
 volunteers.
 </li>
 
-<li><a href="https://leap.se" target="_blank">Bitmask</a> is a new and potentially superior option
-which uses obfuscation with OpenVPN.  It is fantastic - managing server selection, encrypting the connection,
-and other tasks automatically.  Bitmask now offers encrypted email services.  It is known to
-effectively circumvent the Great Firewall of China!  Start Bitmask by clicking its icon on the launcher.
+<li><a href="https://leap.se" target="_blank">Bitmask</a> is an effective but user friendly service
+which uses obfuscated OpenVPN.  It is fantastic - automatically managing server selection,
+encrypting the connection, and other tasks.  Bitmask now offers encrypted email services.  It is known to
+effectively circumvent the Great Firewall of China!  Start Bitmask by clicking its icon on the launcher.  Also,
+stop DNSCrypt-proxy while using Bitmask due to incompatibility.
 </li>
 </ul>
 
-<br>
 <h3>VPN Gate Alternate Mirrors</h3>
-<b><a href="http://mofolinux.com/vpngate.html" target="_blank">http://mofolinux.com/vpngate.html</a></b><br>
-<b><a href="http://bunkerbustervpn.com/vpngate.html" target="_blank">http://bunkerbustervpn.com/vpngate.html</a></b><br>
-<b><a href="http://www.ab9il.net/crypto/vpngate.html#vpngatemirrors" target="_blank">http://www.ab9il.net/crypto/vpngate.html#vpngatemirrors</a></b><br>
+<b><a href="https://mofolinux.com/vpngate.html" target="_blank">https://mofolinux.com/vpngate.html</a></b><br>
+<b><a href="https://bunkerbustervpn.com/vpngate.html" target="_blank">https://bunkerbustervpn.com/vpngate.html</a></b><br>
 
+<h3>SOFTETHER VPN</h3>
+<p>Softether is capable of fast broadband data transfers, uses strong encryption, but is highly
+targeted by censorship authorities.  Client software for Linux is still sparse, but MOFO Linux
+includes the official client plus a Softether Controller application which will partially automate
+the connection process.
+</p>
 
-<h3>TOR, I2P, CJDNS ANONYMOUS NETWORKING / DARKNET</h3>
+<h3>TOR, I2P, FREENET, and CJDNS DARKNET / ANONYMOUS NETWORKING</h3>
 <p>
+<a href="https://www.torproject.org" target="_blank">Tor</a> is the oldest and most well developed anonymous
+network, with extensive infrastructure providing strong anonymity to internet users.
 <a href="https://geti2p.net" target="_blank">I2P</a> is a new robust privacy and anonymity network.
-It is configured as a proxy, but does several other complex tasks to conceal identity and browsing activity.
-<a href="https://www.torproject.org" target="_blank">Tor</a> is an older network,
-with a well developed infrastructure providing anonymity to internet users. For Tor, use the
-"Tor Browser" application, found on the launcher or by entering "Tor" in the Dash search field.  For
-I2P, use the "I2P Controller" application, found by entering "I2P" in the Dash search field.  These
-networks contain internally reachable, anonymized sites as well as exit nodes to the open internet.
+It contains quite a lot of content and services for its users, all resistant to surveillance and
+censorship.  <a href="https://freenetproject.org/" target="_blank">Freenet</a> is an active, decentralised
+anonymous network designed such that it is impossible to censor and extremely resistant to surveillance.
+These networks contain internally reachable anonymized websites, chat areas, forums, markets, and exit nodes to
+the open internet.
 </p>
 
 <p>
-The Tor Browser, Tor Messenger, and OnionShare applications are fully configured for routing through Tor.
-If you are in China or other countries which block encryption, use the Tor bridges and pluggable transports
-to defeat the blockage.
+For anonymous web browsing, use the "Tor Browser" application, found on the launcher or by entering "Tor" in
+the Dash search field.  The Tor Browser, Tor Messenger, and OnionShare applications are fully configured for
+routing through Tor.  If you are in China or other countries which block encryption, use the Tor bridges to 
+defeat the blockage.  Meek-Azure and Obfs4 are most effective.  Tor, with Obfs4 or Scramblesuit, may also be
+run separately using the  "Tor Controller" application.  Use the same application to shut down Tor and reconfigure
+Firefox for normal browsing.
+</p>
+
+<p>
+For I2P, use the "I2P Controller" application, found by entering "I2P" in the Dash search field.  Use the same
+application to shut down I2P and reconfigure Firefox for normal browsing.
+</p>
+
+<p>In MOFO Linux, Freenet is configured to install freshly from its java package.  Use the "Freenet
+Installer" application to set it up for the first time.  To stop or restart Freenet, use the buttons within
+its main browser page.
 </p>
 
 <p>
@@ -143,12 +149,17 @@ to defeat the blockage.
 decentralised, encrypted mesh networking protocol.
 <a href="https://hyperboria.net" target="_blank">Hyperboria</a> is the largest of
 many networks using cjdns offering a vast volume of cyberspace separate from the
-main internet.  It is extremely difficult to surveil or censor.
+main internet.  It is decentralised and extremely difficult to surveil or censor.
 </p>
 
-<br>
-<h3>FILE SYSTEM ENCRYPTION: VERACRYPT, ZULUCRYPT, and ECRYPTFS</h3>
+<h3>INTERPLANETARY FILE SYSTEM</h3>
+<p>The Interplanetary File System is technology providing a robust, decentralised internet based on content
+instead of location.  Applications and data on IPFS are permanent and distributed - with no single point
+of failure or vulnerability to censorship.  Media files, databases, websites, archives on IPFS can
+exist with resilliance and be accessed with high speed.
+</p>
 
+<h3>FILE SYSTEM ENCRYPTION: VERACRYPT, ZULUCRYPT, and ECRYPTFS</h3>
 <p>
 <a href="https://veracrypt.codeplex.com" target="_blank">Veracrypt</a> is the
 top multi-platform software for VERY STRONG file system encryption forked from Truecrypt.
@@ -176,28 +187,22 @@ Be careful to create strong passwords.  Do not allow any secret keys to be compr
 </p>
 
 <h3>MULTMEDIA with ENHANCED AUDIO</h3>
-<p>The very good Ubuntu multimedia apps are enhanced with built-in audio equalization,
-compression, and limiting for extra punch in home theater / office presentation
-environments.  Extra radio stations have been added to Rhythmbox for access to
-news, music, and political programming.
+<p><a href="https://kodi.tv" target="_blank">Kodi Media Center</a> provides access to thousands
+of high quality video and audio streams from around the world. The very good Ubuntu multimedia
+apps are enhanced by the <a href="https://github.com/wwmm/pulseeffects" target="_blank">PulseEffects</a>
+with systemwide audio equalization, compression, and limiting for extra punch in home theater / office
+presentation environments.
 </p>
 
 <h3>ENGLISH, ARABIC, AND CHINESE LANGUAGE SUPPORT</h3>
-
-<p>MOFO Linux 4.0 and above continues with language options introduced in MOFO Linux 3.0.
-MOFO defaults to English on startup, but Chinese and Arabic system languages may
-be selected from the Settings application.  Multilanguage keyboard input is always available.
-To change the system language, select it in "Language support", then <b>LOG OUT</b> and 
-<b>LOG BACK IN</b> without turning off the computer.  The new language will then be activated.
-</p>
-
-<p>
-Firefox may be switched between Chinese, Arabic, or English languages at any time by
-using the <i>Tools -> Languages</i> menu.
+<p>MOFO Linux defaults to English on startup, with ability to change the system to Chinese or Arabic in the
+Settings application.  Multilanguage keyboard input is always available.  To change the system language,
+select it in "Language support", then <b>LOG OUT</b> and 
+<b>LOG BACK IN</b> without turning off the computer.  The new language will then be activated. Language
+support in Firefox may be managed by using the <i>Tools -> Addons -> Languages</i> menu.
 </p>
 
 <h3>ACKNOWLEDGEMENTS</h3>
-
 <p>MOFO Linux wishes to acknowledge and thank the developers creating
 <a href="http://www.ubuntu.com" target="_blank">Ubuntu Linux</a>, the
 base system upon which MOFO Linux is built.  Ubuntu provides incredibly smooth operation,
@@ -207,181 +212,51 @@ get a nod too!  Without OpenVPN, Tor, RSA, SSL, and other goodies, the world wou
 a much less free and more dangerous place.
 </p>
 
-<br>
-Good Luck And Hang Tough,<br>
-Captain Thermobaric<br>
-Website: <a href="http://mofolinux.com" target="_blank">http://mofolinux.com</a><br>
-SourceForge: <a href="https://sourceforge.net/projects/mofolinux/" target="_blank">http://sourceforge.net/projects/mofolinux/</a>
-<br>
-
-<p><b>Disclaimer: Creators or distributors of MOFO Linux bear no responsibility for the actions
-of end users.  Users of MOFO Linux are responsible for their own actions and should consider
-legal implications of evading local and national censorship rules and take suitable measures
-to prevent interdiction.  No guarantees or warranties are applicable to MOFO Linux; much of the
-software is beta, subject to countermeasures, or blocked by adversarial internet providers.
-Use of software in MOFO Linux is solely at the user's discretion and risk.  MOFO Linux is not
-endorsed by or affiliated with Ubuntu / Canonical.  Ubuntu is simply used as a foundation for
-building MOFO Linux.</b>
+<h3>DISCLAIMER</h3>
+<p>MOFO Linux is provided as-is. No guarantees or warranties are applicable to MOFO Linux. Much of
+the software is beta, may be subject to countermeasures, or blocked by adversarial internet providers.
+Use of software in MOFO Linux is solely at the user's own discretion and risk.  MOFO Linux is not
+endorsed by or affiliated with Ubuntu / Canonical / Debian Linux.
 </p>
 
-</div>
+<br>
+Website: <a href="https://mofolinux.com" target="_blank">https://mofolinux.com</a><br>
+SourceForge: <a href="https://sourceforge.net/projects/mofolinux/" target="_blank">https://sourceforge.net/projects/mofolinux/</a>
+<br>
+
+<h3>INTEGRATED CHANGES FOR THIS VERSION OF MOFO LINUX</h3>
+
+Version 6.0:<br>
+     <ul>
+         <li>Switched to MATE Desktop Environment</li>
+         <li>Switched to Linux Kernel 4.14.14-xanmod19</li>
+         <li>Added Signal Desktop 1.3.0</li>
+         <li>Updated WebSDR Server List 01/20/2018</li>
+         <li>Upgraded Bleachbit 1.19</li>
+         <li>Upgraded Firefox Quantum 59.0b6</li>
+         <li>Upgraded Jitsi 2.10.5550</li>
+         <li>Upgraded Lantern 4.4.2 Beta</li>
+         <li>Upgraded Onionshare 1.1</li>
+         <li>Upgraded OpenVPN 2.3.10</li>
+         <li>Upgraded Ring 1.0</li>
+         <li>Upgraded SoftEtherVPN 4.04.9412</li>
+         <li>Upgraded Thunderbird 57.0b2 (with Enigmail and TorBirdy)</li>
+         <li>Upgraded Tor 0.3.1.9</li>
+         <li>Upgraded TorBirdy 0.1.4</li>
+         <li>Upgraded Tor Browser (Sandboxed) 0.0.16</li>
+         <li>Upgraded Tor Messenger 0.5.0b1</li>
+         <li>Upgraded VeraCrypt 1.21</li>
+         <li>Maintained Enigmail 1.9.7</li>
+         <li>Maintained Obfs4proxy-0.0.6</li>
+         <li>Maintained ZuluCrypt 5.2.0</li>
+         <li>Maintained ZuluMount 5.2.0</li>
+     </ul></li>
+<br>
 <div class="center">
 <hr noshade>
 <br>
-
-<p>MOFO Linux Changelog:</p>
-
-<ul>
-<li>Version 4.5:
-     <ul>
-         <li>Added CJDNS / Hyperboria Mesh Networking</li>
-         <li>Added Zulucrypt 4.76</li>
-         <li>Upgraded kernel 4.2.0-35-generic</li>
-         <li>Upgraded Dnscrypt-proxy v1.6.1 (using two resolvers)</li>
-         <li>Upgraded Firefox 46.0.b8</li>
-         <li>Upgraded Libreoffice 5.1.2.2</li>
-         <li>Upgraded Popcorn-Time 0.3.9</li>
-         <li>Upgraded Thunderbird 38.6.0 (with Enigmail)</li>
-         <li>Upgraded Tor 0.2.6.10</li>
-         <li>Upgraded Tor Browser 5.5.4</li>
-         <li>Updated WebSDR server list</li>
-     </ul></li>
-
-<li>Version 4.4:
-     <ul>
-         <li>Added Jitsi (VOIP) 2.8.5426</li>
-         <li>Configured Fcitx multilanguage input methods</li>
-         <li>Disabled Unity "Online Search Results"</li>
-         <li>Upgraded kernel 4.2.0-30-generic</li>
-         <li>Upgraded Firefox 44.0.2</li>
-         <li>Upgraded Lantern 2.0.16</li>
-         <li>Upgraded Libreoffice 5.1.1.2</li>
-         <li>Upgraded Popcorn-Time 0.3.9</li>
-         <li>Upgraded Thunderbird 38.5.1 (with Enigmail)</li>
-         <li>Upgraded Tor Browser 5.5.2</li>
-         <li>Updated WebSDR server list</li>
-     </ul></li>
-
-<li>Version 4.3:
-     <ul>
-         <li>Ubuntu 15.10 base system, kernel 4.2.0-21-generic</li>
-         <li>Changed default username and hostname to "mofo"</li>
-         <li>Bug Fixes: DNScrypt-Proxy, I2P, Popcorn-Time, Privoxy</li>
-         <li>Added Onionshare 0.8.1</li>
-         <li>Upgraded Bitmask 0.9.1</li>
-         <li>Upgraded Filezilla 3.12.0.2</li>
-         <li>Upgraded Libreoffice 5.0.4.2</li>
-         <li>Upgraded Thunderbird 38.4.0 (with Enigmail)</li>
-         <li>Upgraded Tor Browser 5.0.7</li>
-     </ul></li>
-
-<li>Version 4.2:
-     <ul>
-         <li>Added Fcitx inputs m17n and Googlepinyin</li>
-         <li>Added Filezilla 3.9.0.5</li>
-         <li>Added Lantern 2.0.10</li>
-         <li>Added Tor Messenger (beta)</li>
-         <li>Added Transmission 2.84</li>
-         <li>Upgraded Firefox 42.0</li>
-         <li>Upgraded Popcorn-Time 0.3.8-5 (beta, with working movie API)</li>
-         <li>Upgraded Tor Browser to v5.0.4</li>
-         <li>Upgraded Veracrypt  to v1.14</li>
-     </ul></li>
-
-<li>Version 4.1:
-     <ul>
-         <li>Added JonDo 00.19 (Java Anonymity Proxy)</li>
-         <li>Configured Fcitx (language input methods) to autostart</li>
-         <li>Enabled zram performance enhancement</li>
-     </ul></li>
-
-<li>Version 4.0:
-     <ul>
-         <li>Changed to Ubuntu base system v15.04, 64 bits, Linux kernel 3.19.0-15</li>
-         <li>Upgraded OpenVPN 2.3.2</li>
-         <li>Added SoftEther VPN client 4.18</li>
-         <li>Added Tor v0.2.5.10, with Tor Browser bundle v5.0</li>
-         <li>Added Bitmask 0.8.1</li>
-         <li>Added Bleachbit 1.8</li>
-         <li>Added Ecryptfs Utilities</li>
-         <li>Added Popcorn-Time 0.3.8-2</li>
-         <li>I2P 0.9.18</li>
-         <li>DNScrypt system maintained at 1.6.0</li>
-         <li>Upgraded Libre Office 4.4.2.2</li>
-         <li>Upgraded Firefox 39</li>
-         <li>Ring (VOIP) version 0.4</li>
-         <li>Expanded English, Chinese, and Arabic Laguage support.</li>
-         <li>Java Runtime Environment 1.8.0_45</li>
-         <li>Privoxy 3.0.21 integrated with Firefox (routing for Tor and I2P)</li>
-         <li>Python 2.7.9</li>
-         <li>Generic video drivers updated.</li>
-         <li>Veracrypt 1.0f-2</li>
-     </ul></li>
-
-<li>Version 3.0:
-     <ul>
-         <li>Upgraded Porteus base system v3.0.1, 64 bits, Linux kernel 3.14.15</li>
-         <li>Upgraded OpenVPN 2.3.2</li>
-         <li>Added SoftEther VPN and helper scripts</li>
-         <li>Added TOR 0.2.3.25 controlled by Vidalia 0.2.21</li>
-         <li>Added Bitmask 0.8.1</li>
-         <li>Added Bleachbit 1.6</li>
-         <li>Added Ecryptfs Utilities</li>
-         <li>Added Olive 1.0.16</li>
-         <li>Added Popcorn-Time 0.3.7-1</li>
-         <li>I2P 0.9.8.1</li>
-         <li>L2TP/IPsec VPN support improved [NetworkManager, Internet Security Tools]</li>
-         <li>DNScrypt system maintained at 1.3.3</li>
-         <li>Upgraded Libre Office 4.4</li>
-         <li>Upgraded Firefox 37.0.1 with Flashplayer and IcedTea Java plugins</li>
-         <li>Skype version 4.4</li>
-         <li>Google Talk 5.1.5.0</li>
-         <li>Expanded English, Chinese, and Arabic Laguage support.</li>
-         <li>Java Runtime Environment 1.70_71</li>
-         <li>Privoxy 3.0.21 integrated with Firefox (routing for Tor, I2P, and Olive)</li>
-         <li>Python 2.7.5</li>
-         <li>Generic video drivers updated.</li>
-         <li>Veracrypt 1.0e file encryption replaces Truecrypt</li>
-     </ul></li>
-
-<li>Version 2.0:
-     <ul>
-         <li>Upgraded Porteus base system v2.1, 64 bits, Linux kernel 3.7.8</li>
-         <li>I2P version 0.9.8.1</li>
-         <li>L2TP/IPsec VPN support included</li>
-         <li>Upgraded Libre Office 4.1</li>
-         <li>Upgraded Firefox 21.0.0 with Flashplayer</li>
-         <li>Privoxy 3.0.21 integrated with Firefox</li>
-         <li>DNScrypt system upgraded to 1.3.3</li>
-         <li>Minor system tweaks</li>
-         <li>Generic video drivers for greater hardware compatibility</li>
-         <li>Skype version 4.2</li>
-         <li>Google Talk 4.0.3.0</li>
-     </ul></li>
-
-<li>Version 1.1:
-     <ul>
-         <li>Upgraded Porteus base system v1.1, 32 bits, Linux kernel 3.1.8</li>
-         <li>Upgraded Firefox 10.0.2</li>
-         <li>Privoxy 3.0.19 integrated with Firefox</li>
-         <li>DNScrypt system replaces DNS server rotation scheme</li>
-         <li>Minor system tweaks</li>
-     </ul></li>
-
-<li>Version 1.0:
-     <ul>
-         <li>Porteus base system v1.0, 32 bits, Linux kernel 3.1.8</li>
-         <li>Firefox 10.0.2</li>
-         <li>DNS server rotation scheme</li>
-         <li>Skype 2.1.0.81</li>
-         <li>OpenVPN</li>
-     </ul></li>
-</ul>
-
 </div>
-<div class="center">
-<hr noshade>
-<br>
+
 
 </div>
 </div>

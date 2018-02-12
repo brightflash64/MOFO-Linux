@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Web Browsing in MOFO Linux</title>
+    <meta name="Author" content="Philip Collier">
+    <meta name="Description" content="Comments regarding web browsing in MOFO Linux.">
+    <meta name="GENERATOR" content="Kwrite">
+    <meta name="Language" content="English">  
+    <meta name="Summary" content="Comments regarding web browsing in MOFO Linux.">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="textpage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  </head>
+<body>
+<div class="content">
+<div class="inner">
+<h1>Web Browsing in MOFO Linux</h1>
+<div class="clear"></div>
+
+<p>MOFO Linux offers multiple ways to browse the internet while circumventing
+censorship barriers.  There are, however, access priorities and
+performance trades to consider. We will explore some of the main factors in the
+paragraphs below.
+</p>
+
+<p>The two main considerations for internet browsing in MOFO Linux are anonymity
+and connection bandwidth.  One can have high anonymity but get content at a lower
+speed, or browse with faster speed and have less anonymity and greater exposure to
+censorship.
+</p>
+
+<p>Firefox, with Lantern or Psiphon domain fronting proxies, is the primary
+means of accessing web content in MOFO Linux.  Starting either proxy method will
+bring up Firefox and make the necessary network connections to circumvent
+censorship barriers.  Both provide good broadband connectivity and use moderate
+encryption to thwart moderate surveillance and deep packet inspection.  State level
+attackers have the means to time, capture, and eventually decrypt traffic
+through these proxies, so they should be considered <i>access</i> and not
+<i>anonymity</i> tools.  These circumvention tools rely on relaying
+browser traffic through domains that are financially harmful for the
+censoring government to block.  Thus, they work most of the time, with only
+intermittent interruption.
+</p>
+
+<p>Kodi Media Center, while not a web browser per se, does use the web to access
+much of its content.  State censorship systems can (and do) impair the ability to
+find and stream content in Kodi, so it is configured in MOFO Linux to use the same
+circumvention methods as Firefox.  Streaming bandwidth is lower than when connecting
+directly to a content source, but the content <i>is</i> unblocked.
+</p>
+
+<p>OpenVPN and SoftEther provide high bandwidth and secure access to
+remote VPN severs.  These currently have the significant disadvantage of
+being easily detected and blocked by censoring countries.  Without using
+extra obfuscation methods, do not expect OpenVPN or SoftEther to work
+in countries such as China or Iran.
+</p>
+
+<p>Tor Browser is the primary tool for anonymous web access in MOFO Linux.  It
+uses a system of 
+<a href="https://obfuscation.github.io/" target="_blank">pluggable transports</a>
+for obfuscation and onion routing which greatly increases the difficulty for an
+attacker to determine user's IP address. Tor Browser uses a separate instance of
+Firefox, specially configured and hardened, to access the internet.  There is some
+latency on the network of Tor relays, so streaming content is slower than on Psiphon
+or Lantern, but Tor provides both strong anonymity and resistance to blocking. Tor
+Browser also provides access to hidden services only accessible through Tor relays.
+</p>
+
+<p>Note that MOFO Linux contains an installation of Tor separate from the one in
+Tor Browser.  It is available through the Tor Controller application and must
+be used with Obfs4 or Scramblesuit pluggable transports.  Tor Controller will
+configure Firefox to use Tor instead of Lantern or Psiphon.
+</p>
+ 
+</p>I2P and Freenet are the other darknet applications, other than Tor,
+in MOFO Linux.  These provide access to their own respective content, and
+because of encryption and network relays, I2P and Freenet offer anonymity
+and redistance to censorship.
+</p>
+
+</div>
+<div class="center">
+<hr noshade>
+<br>
+
+</div>
+</div>
+</body>
+</html>
