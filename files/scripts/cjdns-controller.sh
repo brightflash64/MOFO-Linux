@@ -1,90 +1,153 @@
 #!/bin/sh
+
+# Cjdns-controller.
+# Copyright (c) 2018 by Philip Collier, <webmaster@mofolinux.com>
+# This script is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version. There is NO warranty; not even for
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 Encoding=UTF-8
 
+sudo -s
+
 stopcjdns(){
-/etc/init.d/hyperboria stop
-sleep 2
-systemctl stop cjdns
+	sudo /etc/init.d/cjdns stop
+	sudo /etc/init.d/privoxy stop
+	sudo cp /usr/local/etc/privoxy/config.orig /usr/local/etc/privoxy/config
+	sudo /etc/init.d/privoxy start
+sudo bash -c 'echo "nameserver 127.0.2.1
+nameserver 127.0.2.2" > /run/resolvconf/resolv.conf'
+	systemctl restart dnscrypt-proxy
+	systemctl restart dnscrypt-proxy2
 }
 
 startcjdns(){
-systemctl start cjdns
-sleep 2
-/etc/init.d/hyperboria start
+        dnscryptstop
+	sudo /etc/init.d/privoxy stop
+	sudo cp /usr/local/etc/privoxy/config.orig /usr/local/etc/privoxy/config
+	sudo /etc/init.d/privoxy start
+	systemctl start cjdns
+	sleep 2
+	sudo /etc/init.d/cjdns start
 }
 
 restartcjdns(){
-/etc/init.d/hyperboria restart
+        dnscryptstop
+	sudo /etc/init.d/privoxy stop
+	sudo cp /usr/local/etc/privoxy/config.orig /usr/local/etc/privoxy/config
+	sudo /etc/init.d/privoxy start
+	sudo /etc/init.d/cjdns restart
 }
 
 updatecjdns(){
-/etc/init.d/hyperboria update
+	sudo mate-terminal -e 'bash -c "/etc/init.d/cjdns update"'
 }
 
 copyfile(){
-systemctl stop cjdns
-cp $ans /etc/cjdroute.conf
-sleep 2
-systemctl start cjdns
+	systemctl stop cjdns
+	sudo cp $ans /etc/cjdroute.conf
+	sleep 2
+	systemctl start cjdns
+}
+
+dnscryptstop(){
+sudo bash -c 'echo "nameserver 9.9.9.9
+nameserver 8.8.8.8" > /run/resolvconf/resolv.conf'
+systemctl stop dnscrypt-proxy
+systemctl stop dnscrypt-proxy2
 }
 
 ipv4peers(){
-/etc/init.d/hyperboria stop
-sleep 2
-systemctl stop cjdns
-sed -i "91i // Manually Added IPv4 Peers:" /etc/cjdroute.conf
-sed -i '/ Manually Added IPv4 Peers:/r /usr/local/sbin/cjdns/cjdns_peers_ipv4' /etc/cjdroute.conf
-chmod 600 /etc/cjdroute.conf
-systemctl start cjdns
-sleep 2
-/etc/init.d/hyperboria start
+        dnscryptstop
+	sudo /etc/init.d/cjdns stop
+	sleep 2
+	systemctl stop cjdns
+	sudo sed -i "91i // Manually Added IPv4 Peers:" /etc/cjdroute.conf
+	sudo sed -i "/ Manually Added IPv4 Peers:/r /$HOME/cjdns/cjdns_peers_ipv4" /etc/cjdroute.conf
+	sudo chmod 600 /etc/cjdroute.conf
+	systemctl start cjdns
+	sleep 2
+	sudo /etc/init.d/cjdns start
 }
 
 ipv6peers(){
-/etc/init.d/hyperboria stop
-sleep 2
-systemctl stop cjdns
-sed -i "102i // Manually Added IPv6 Peers:" /etc/cjdroute.conf
-sed -i '/ Manually Added IPv6 Peers:/r /usr/local/sbin/cjdns/cjdns_peers_ipv6' /etc/cjdroute.conf
-chmod 600 /etc/cjdroute.conf
-systemctl start cjdns
-sleep 2
-/etc/init.d/hyperboria start
+        dnscryptstop
+	sudo /etc/init.d/cjdns stop
+	sleep 2
+	systemctl stop cjdns
+	sudo sed -i "102i // Manually Added IPv6 Peers:" /etc/cjdroute.conf
+	sudo sed -i "/ Manually Added IPv6 Peers:/r /$HOME/cjdns/cjdns_peers_ipv6" /etc/cjdroute.conf
+	sudo chmod 600 /etc/cjdroute.conf
+	systemctl start cjdns
+	sleep 2
+	sudo /etc/init.d/cjdns start
 }
 
 copyfile(){
-if [ -f "/$HOME/cjdns/cjdroute.conf" ]
-then
-	cp /$HOME/cjdns/cjdroute.conf /etc/cjdroute.conf
-	chmod 600 /etc/cjdroute.conf
-else
-	echo "$file not found."
-fi
+	if [ -f "/$HOME/cjdns/cjdroute.conf" ]
+	then
+		sudo cp /$HOME/cjdns/cjdroute.conf /etc/cjdroute.conf
+		sudo chmod 600 /etc/cjdroute.conf
+	else
+		echo "$file not found."
+	fi
 }
 
 createconf(){
-cjdroute --genconf > /etc/cjdroute.conf
-chmod 600 /etc/cjdroute.conf
+	sudo /opt/cjdns/cjdroute --genconf > /etc/cjdroute.conf
+	sudo chmod 600 /etc/cjdroute.conf
 }
 
-ans=$(zenity  --list --title="CJDNS/HYPERBORIA CONTROLLER" --height 290 --width 350 \
---text "Please pick from this list." --radiolist --column "Pick" \
-TRUE "Stop CJDNS" FALSE "Start CJDNS" FALSE "Restart CJDNS"  FALSE "Update CJDNS" \
-FALSE "Set IPv4 Peers (json formatted)" FALSE "Set IPv6 Peers  (json formatted)" \
-FALSE "Use config file (~/cjdns/cjdroute.conf)" FALSE "Create new config file (/etc/cjdroute.conf)" \
---column "Action");
+status(){
+	mate-terminal -e 'bash -c "systemctl status cjdns -l; read line"'
+}
 
-	if [  "$ans" = "Stop CJDNS" ]; then
-		stopcjdns
+peerstats(){
+	sudo mate-terminal -e 'bash -c "/opt/cjdns/tools/peerStats; read line"'
+}
 
-	elif [  "$ans" = "Start CJDNS" ]; then
-		startcjdns
+getpeers(){
+freshpeer=$(zenity  --list --title="GET NEW CJDNS PEERS" --height 230 --width 350 \
+--text "Please select a region for your fresh peers.
+Data will download to your home folder.
+Manually copy and paste the data into the peers lists." --radiolist --column "Select" --column "Region" \
+FALSE "North America" \
+FALSE "Europe" \
+FALSE "Asia");
 
-	elif [  "$ans" = "Restart CJDNS" ]; then
-		restartcjdns
+	if [  "$freshpeer" = "North America" ]; then
+		mate-terminal -e 'bash -c "curl https://peers.fc00.io/1/location/na >> peers.txt"'
 
-	elif [  "$ans" = "Update CJDNS" ]; then
-		updatecjdns
+	elif [  "$freshpeer" = "Europe" ]; then
+		mate-terminal -e 'bash -c "curl https://peers.fc00.io/1/location/eu >> peers.txt"'
+
+	elif [  "$freshpeer" = "Asia" ]; then
+		mate-terminal -e 'bash -c "curl https://peers.fc00.io/1/location/as >> peers.txt"'
+
+	fi
+chmod 666 peers.txt
+}
+
+ans=$(zenity  --list --title="CJDNS/HYPERBORIA CONTROLLER" --height 460 --width 360 \
+--text "Follow these steps to connect.
+Relaunch this app for each step:
+     1) Create the config file.
+     2) Set Peers
+     3) Restart Cjdns
+     4) Check Peerstats
+     5) Check Status" --radiolist --column "Select" --column "Task" \
+FALSE "Create new config file (/etc/cjdroute.conf)" \
+FALSE "Set IPv4 Peers (json formatted)" \
+FALSE "Set IPv6 Peers  (json formatted)" \
+FALSE "Restart CJDNS" \
+FALSE "Check CJDNS peerstats" FALSE "Check CJDNS status" \
+FALSE "Update CJDNS" FALSE "Use config file (~/cjdns/cjdroute.conf)" \
+FALSE "Get Fresh Peers" FALSE "Start CJDNS" TRUE "Stop CJDNS" );
+
+	if [  "$ans" = "Create new config file (/etc/cjdroute.conf)" ]; then
+		createconf
 
 	elif [  "$ans" = "Set IPv4 Peers (json formatted)" ]; then
 		ipv4peers
@@ -92,10 +155,28 @@ FALSE "Use config file (~/cjdns/cjdroute.conf)" FALSE "Create new config file (/
 	elif [  "$ans" = "Set IPv6 Peers  (json formatted)" ]; then
 		ipv6peers
 
+	elif [  "$ans" = "Restart CJDNS" ]; then
+		restartcjdns
+
+	elif [  "$ans" = "Check CJDNS peerstats" ]; then
+		peerstats
+
+	elif [  "$ans" = "Check CJDNS status" ]; then
+		status
+
+	elif [  "$ans" = "Update CJDNS" ]; then
+		updatecjdns
+
 	elif [  "$ans" = "Use config file (~/cjdns/cjdroute.conf)" ]; then
 		copyfile
 
-	elif [  "$ans" = "Create new config file (/etc/cjdroute.conf)" ]; then
-		createconf
+	elif [  "$ans" = "Get Fresh Peers" ]; then
+		getpeers
+
+	elif [  "$ans" = "Start CJDNS" ]; then
+		startcjdns
+
+	elif [  "$ans" = "Stop CJDNS" ]; then
+		stopcjdns
 
 	fi
