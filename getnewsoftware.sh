@@ -1,8 +1,13 @@
 #! /bin/sh
 
-#System setup script for MOFO Linux v6.0
-#Use on Ubuntu / Mint / Debian
-#Run this script as root within the chroot!
+# MOFO Linux v6.0 setup script.
+# Copyright (c) 2018 by Philip Collier, <webmaster@mofolinux.com>
+# mofo-updater is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version. There is NO warranty; not even for
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# Run this script as root within the chroot!
 
 #increase Ubuntu privacy, reduce resource load, remove conflicting packages
 apt-get purge --auto-remove speech-dispatcher modemmanager cheese rhythmbox* shotwell unity-lens-shopping webbrowser-app deja-dup file-roller evince indicator-messages plymouth-theme-ubuntu-text snap-confine ubuntu-core-launcher ubiquity-ubuntu-artwork whoopsie zeitgeist zeitgeist-core
