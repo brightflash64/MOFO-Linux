@@ -1,4 +1,4 @@
-#**MOFO Linux Setup Scrips**  
+**MOFO Linux Setup Scrips**  
 
 
 These scripts are written for Debian / Ubuntu / Mint Linux and automates the setup and maintenance of MOFO Linux.  They will download software, create directories, configure settings, and copy files specific to this distro.
